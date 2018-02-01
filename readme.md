@@ -1,4 +1,4 @@
-# DotNet.Myra
+![DotNet.Myra](http://carlubian.azurewebsites.net/images/Myra.png "DotNet.Myra")
 ## Pattern matching made easy
 
 Start using DotNet.Myra in your projects to use a clean and expressive pattern matching system.
