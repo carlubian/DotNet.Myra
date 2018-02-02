@@ -19,14 +19,22 @@ namespace DotNet.Myra.Standard
         public static T Match<T>(this T target, Pattern<T> pattern, Action<T> action)
         {
             if (pattern is null)
+            {
                 return target;
+            }
             if (pattern._pattern is null)
+            {
                 return target;
+            }
             if (action is null)
+            {
                 return target;
+            }
 
             if (pattern._pattern(target))
+            {
                 action(target);
+            }
             return target;
         }
 

@@ -248,14 +248,6 @@ namespace DotNet.Myra.Standard
         public static Pattern<ICollection<T>> IsOfLength<T>(int target) 
             => Pattern<ICollection<T>>.From(param => param.Count == target);
 
-        // ------ Patterns for IDictionary<TKey, TValue> ------
-
-        /*public static Pattern<IDictionary<TKey, TValue>> ContainsKey<TKey, TValue>(TKey target) 
-            => Pattern<IDictionary<TKey, TValue>>.From(param => param.Keys.Contains(target));
-
-        public static Pattern<IDictionary<TKey, TValue>> ContainsValue<TKey, TValue>(TValue target) 
-            => Pattern<IDictionary<TKey, TValue>>.From(param => param.Values.Contains(target));*/
-
         // ------ Patterns for DateTime ------
 
         /// <summary>

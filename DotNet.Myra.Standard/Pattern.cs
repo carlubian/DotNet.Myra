@@ -22,7 +22,7 @@ namespace DotNet.Myra.Standard
         /// <returns></returns>
         public static Pattern<T> From(Func<T, bool> func)
         {
-            return new Pattern<T>() { _pattern = func };
+            return new Pattern<T> { _pattern = func };
         }
     }
 }
