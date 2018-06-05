@@ -36,7 +36,7 @@ namespace DotNet.Myra.Standard
         /// <param name="target">Target collection</param>
         /// <returns></returns>
         public static Pattern<T> IsHeldWithin<T>(IEnumerable<T> target) 
-            => Pattern<T>.From(param => target.Contains(param));
+            => Pattern<T>.From(target.Contains);
 
         // ------ Patterns for IComparable<T> ------
 
@@ -116,7 +116,7 @@ namespace DotNet.Myra.Standard
         /// </summary>
         /// <returns></returns>
         public static Pattern<string> IsWhitespace() 
-            => Pattern<string>.From(param => param.Trim().Length is 0);
+            => Pattern<string>.From(string.IsNullOrWhiteSpace);
 
         /// <summary>
         /// Matches if the string contains the parameter string.

@@ -16,7 +16,12 @@ namespace DotNet.Myra.Test
             new object().Match(Patterns.IsNull<object>(), n => result = true);
             result.Should().Be(false);
 
-            ((Func<object>)(() => null))().Match(Patterns.IsNull<object>(), n => result = true);
+            object GetNull()
+            {
+                return null;
+            }
+
+            GetNull().Match(Patterns.IsNull<object>(), n => result = true);
             result.Should().Be(true);
         }
 
@@ -132,6 +137,102 @@ namespace DotNet.Myra.Test
             result.Should().Be(false);
 
             false.Match(Patterns.IsFalse(), n => result = true);
+            result.Should().Be(true);
+        }
+
+        [TestMethod]
+        public void TestIsEmpty()
+        {
+            var result = false;
+
+            "foo".Match(Patterns.IsEmpty(), n => result = true);
+            result.Should().Be(false);
+
+            "".Match(Patterns.IsEmpty(), n => result = true);
+            result.Should().Be(true);
+        }
+
+        [TestMethod]
+        public void TestIsWhitespace()
+        {
+            var result = false;
+
+            "foo bar".Match(Patterns.IsWhitespace(), n => result = true);
+            result.Should().Be(false);
+
+            " \t  ".Match(Patterns.IsWhitespace(), n => result = true);
+            result.Should().Be(true);
+        }
+
+        [TestMethod]
+        public void TestContains()
+        {
+            var result = false;
+
+            "The quick brown fox".Match(Patterns.Contains("lazy"), n => result = true);
+            result.Should().Be(false);
+
+            "jumps over the lazy dog".Match(Patterns.Contains("lazy"), n => result = true);
+            result.Should().Be(true);
+        }
+
+        [TestMethod]
+        public void TestIsLongerThan()
+        {
+            var result = false;
+
+            "The quick brown fox".Match(Patterns.IsLongerThan(64), n => result = true);
+            result.Should().Be(false);
+
+            "jumps over the lazy dog".Match(Patterns.IsLongerThan(16), n => result = true);
+            result.Should().Be(true);
+        }
+
+        [TestMethod]
+        public void TestIsShorterThan()
+        {
+            var result = false;
+
+            "The quick brown fox".Match(Patterns.IsShorterThan(16), n => result = true);
+            result.Should().Be(false);
+
+            "jumps over the lazy dog".Match(Patterns.IsShorterThan(64), n => result = true);
+            result.Should().Be(true);
+        }
+
+        [TestMethod]
+        public void TestIsOfLength()
+        {
+            var result = false;
+
+            "foo".Match(Patterns.IsOfLength(6), n => result = true);
+            result.Should().Be(false);
+
+            "foo".Match(Patterns.IsOfLength(3), n => result = true);
+            result.Should().Be(true);
+        }
+
+        [TestMethod]
+        public void TestStartsWith()
+        {
+            var result = false;
+
+            "The quick brown fox".Match(Patterns.StartsWith("brown"), n => result = true);
+            result.Should().Be(false);
+
+            "jumps over the lazy dog".Match(Patterns.StartsWith("j"), n => result = true);
+            result.Should().Be(true);
+        }
+
+        [TestMethod]
+        public void TestEndsWith()
+        {
+            var result = false;
+
+            "The quick brown fox".Match(Patterns.EndsWith("brown"), n => result = true);
+            result.Should().Be(false);
+
+            "jumps over the lazy dog".Match(Patterns.EndsWith("dog"), n => result = true);
             result.Should().Be(true);
         }
     }
