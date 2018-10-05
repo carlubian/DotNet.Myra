@@ -256,7 +256,7 @@ namespace DotNet.Myra.Standard
         /// <param name="target">Target DateTime</param>
         /// <returns></returns>
         public static Pattern<DateTime> IsBefore(DateTime target) 
-            => IsGreaterThan(target);
+            => IsLesserThan(target);
 
         /// <summary>
         /// Matches if the DateTime represents a moment after the parameter DateTime.
@@ -264,6 +264,6 @@ namespace DotNet.Myra.Standard
         /// <param name="target">Target DateTime</param>
         /// <returns></returns>
         public static Pattern<DateTime> IsAfter(DateTime target) 
-            => IsLesserThan(target);
+            => IsGreaterThan(target);
     }
 }
