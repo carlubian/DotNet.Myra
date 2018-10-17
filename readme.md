@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/carlubian/DotNet.Myra.svg?branch=master)](https://travis-ci.org/carlubian/DotNet.Myra)
+[![Build Status](https://carlubian.visualstudio.com/GitHub%20Interop/_apis/build/status/DotNet.Myra%20Build)](https://carlubian.visualstudio.com/GitHub%20Interop/_build/latest?definitionId=11)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e69a6a48f12e4a5dad3fd7fdb23e9771)](https://www.codacy.com/app/carlubian/DotNet.Myra?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=carlubian/DotNet.Myra&amp;utm_campaign=Badge_Grade)
 [![NuGet](https://img.shields.io/nuget/v/DotNet.Myra.Standard.svg)](https://www.nuget.org/packages/DotNet.Myra.Standard/)
 [![NuGet](https://img.shields.io/nuget/dt/DotNet.Myra.Standard.svg)](https://www.nuget.org/packages/DotNet.Myra.Standard/)
