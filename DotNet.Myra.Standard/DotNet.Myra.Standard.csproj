@@ -1,7 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <Id>DotNet.Myra.Standard</Id>
+    <Title>DotNet.Myra.Standard</Title>
+    <Version>1.1.1</Version>
+    <Authors>carlubian</Authors>
+    <Owners>carlubian</Owners>
+    <Company>carlubian</Company>
+    <PackageReleaseNotes>Added framework multi-targetting for .NET Framework 4.6.1</PackageReleaseNotes>
+    <PackageProjectUrl>https://Myra.azurewebsites.net</PackageProjectUrl>
+    <PackageIconUrl>http://carlubian.azurewebsites.net/images/icon-myra.png</PackageIconUrl>
+    <Description>Provides a pattern matching mechanism for C#.</Description>
+    <RepositoryUrl>https://www.github.com/carlubian/DotNet.Myra</RepositoryUrl>
+    <PackageTags>patterns, pattern-matching, dotnet-standard, dotnet-core</PackageTags>
   </PropertyGroup>
 
 </Project>
