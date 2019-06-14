@@ -306,6 +306,21 @@ namespace DotNet.Myra.Test
         }
 
         [TestMethod]
+        public void TestContainsAll()
+        {
+            var result = false;
+            var c1 = new int[] { 2, 4, 6, 8 };
+            var c2 = new int[] { 1, 3, 5, 7 };
+            var c3 = new int[] { 6, 2, 8, 4 };
+
+            c1.Match(Patterns.ContainsAll(c2), n => result = true);
+            result.Should().BeFalse();
+
+            c1.Match(Patterns.ContainsAll(c3), n => result = true);
+            result.Should().BeTrue();
+        }
+
+        [TestMethod]
         public void TestCollectionContains()
         {
             var result = false;

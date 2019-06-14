@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Default Patterns - Myra</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/selawik" type="text/css" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/muli" type="text/css" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/flushing.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="mars-3 grey-3-text">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark orange-4">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="index.html">Myra</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="mainNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Features.html">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Reference.html">References</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Download.html">Download</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- Encabezado -->
+<div class="jumbotron jumbotron-fluid orange-3">
+    <div class="row justify-content-center container-fluid">
+        <div class="col-sm-8">
+
+            <h2 class="future-3-text">Default Patterns</h2>
+            <p class="lead future-3-text">Instead of writing all the
+                patterns as you use them, you can choose from a list
+                of predefined patterns.</p>
+            <hr class="my-4">
+
+            <a class="btn blue-3 future-3-text btn-lg" href="Reference.html" role="button">Go back</a>
+
+        </div>
+    </div>
+</div>
+
+<!-- Panel de contenido claro -->
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <h2>Efficiency is paramount</h2>
+            <p class="card-text subtitle">
+                Life is what happens while you're busy making other plans.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                Specifying patterns manually in each call can take quite some
+                time, and make code somewhat convoluted. Furthermore, some
+                patterns are used a lot, so they would be repeated across the
+                code base.
+            </p>
+            <p>
+                Instead, the <span class="emphasis orange-3-text">Patterns</span>
+                class offers a number of predefined patterns that can be used
+                to save time.
+            </p>
+            <p>
+                To use one of these patterns, call its corresponding method,
+                passing the required parameters if needed:
+            </p>
+            <pre class="prettyprint lang-cs">// Check whether a string contains a fairytale
+var isFairytale = Patterns.StartsWith("Once upon a time");
+
+// Check the age of a person (inline)
+person.Age.Match(Patterns.IsGreaterThan(10), p => Console.WriteLine("Client does not qualify for discount."));
+            </pre>
+
+        </div>
+    </div>
+</div>
+
+<!-- Panel de contenido oscuro -->
+<div class="jumbotron jumbotron-fluid orange-3 my-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <h2 class="mars-3-text">Generically speaking</h2>
+            <p class="card-text mars-3-text">
+                How to decide whether you need to explicitly
+                write the generic parameters for a pattern.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                In most cases, you don't need to specify the generic
+                parameters for a pattern, because the compiler is able
+                to infer them. That said, in some cases type inference
+                is not possible.
+            </p>
+            <p>
+                The general rule is that if a pattern has at least a
+                parameter of the same generic type as the matching object,
+                type inference will work correctly.
+            </p>
+            <p>
+                In practice, refer to the compiler errors, or lack thereof,
+                to determine whether a specific pattern requires type information.
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<!-- Panel de contenido claro -->
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <h2>A lot to choose from</h2>
+            <p class="card-text subtitle">
+                It is our choices that show what we truly are.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                These are the currently available patterns:
+            </p>
+            <table class="table table-hover">
+                <thead class="grey-5 mars-3-text">
+                    <tr>
+                        <th scope="col">Pattern name</th>
+                        <th scope="col">Applied to</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsNull</span>&lt;T&gt;()</th>
+                        <td>Any class or nullable struct object.</td>
+                        <td>Matches if the target object is null.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsEqualTo</span>&lt;T&gt;(T target)</th>
+                        <td>Any instance of IEquatable&lt;T&gt;.</td>
+                        <td>Matches if the target object is equal to the parameter object.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsHeldWithin</span>&lt;T&gt;(IEnumerable&lt;T&gt; target)</th>
+                        <td>Any object.</td>
+                        <td>Matches if the target object is contained by the parameter collection.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsGreaterThan</span>&lt;T&gt;(T target)</th>
+                        <td>Any instance of IComparable&lt;T&gt;.</td>
+                        <td>Matches if the target object is greater than the parameter object.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsGreaterOrEqual</span>&lt;T&gt;(T target)</th>
+                        <td>Any instance of IComparable&lt;T&gt;.</td>
+                        <td>Matches if the target object is greater or equal than the parameter object.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsLesserThan</span>&lt;T&gt;(T target)</th>
+                        <td>Any instance of IComparable&lt;T&gt;.</td>
+                        <td>Matches if the target object is lesser than the parameter object.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsLesserOrEqual</span>&lt;T&gt;(T target)</th>
+                        <td>Any instance of IComparable&lt;T&gt;.</td>
+                        <td>Matches if the target object is lesser or equal than the parameter object.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsWithinRange</span>&lt;T&gt;(T lower, T upper)</th>
+                        <td>Any instance of IComparable&lt;T&gt;.</td>
+                        <td>Matches if the target object is between lower and upper (both inclusive).</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsTrue</span>()</th>
+                        <td>Any boolean.</td>
+                        <td>Matches if the target boolean is true.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsFalse</span>()</th>
+                        <td>Any boolean.</td>
+                        <td>Matches if the target boolean is false.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsEmpty</span>()</th>
+                        <td>Any string.</td>
+                        <td>Matches if the target string is empty.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsWhitespace</span>()</th>
+                        <td>Any string.</td>
+                        <td>Matches if the target string contains only whitespace characters.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">Contains</span>(string target)</th>
+                        <td>Any string.</td>
+                        <td>Matches if the target string contains the parameter string.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsLongerThan</span>(int target)</th>
+                        <td>Any string.</td>
+                        <td>Matches if the target string is longer than the parameter length.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsShorterThan</span>(int target)</th>
+                        <td>Any string.</td>
+                        <td>Matches if the target string is shorter than the parameter length.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsOfLength</span>(int target)</th>
+                        <td>Any string.</td>
+                        <td>Matches if the target string has exactly the parameter length.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">StartsWith</span>(string target)</th>
+                        <td>Any string.</td>
+                        <td>Matches if the target string starts with the parameter string.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">EndsWith</span>(string target)</th>
+                        <td>Any string.</td>
+                        <td>Matches if the target string ends with the parameter string.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsEmpty</span>&lt;T&gt;()</th>
+                        <td>Any instance of ICollection&lt;T&gt;.</td>
+                        <td>Matches if the target collection is empty.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">HasDuplicates</span>&lt;T&gt;()</th>
+                        <td>Any instance of ICollection&lt;T&gt;.</td>
+                        <td>Matches if the target collection contains duplicated elements.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsSubsetOf</span>&lt;T&gt;(ICollection&lt;T&gt; target)</th>
+                        <td>Any instance of ICollection&lt;T&gt;.</td>
+                        <td>Matches if the target collection is a subset of the parameter collection (that is, all its elements are contained by the parameter collection).</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsSupersetOf</span>&lt;T&gt;(ICollection&lt;T&gt; target)</th>
+                        <td>Any instance of ICollection&lt;T&gt;.</td>
+                        <td>Matches if the target collection is a superset of the parameter collection (that is, it contains all elements in the parameter collection).</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsSequenceEqual</span>&lt;T&gt;(ICollection&lt;T&gt; target)</th>
+                        <td>Any instance of ICollection&lt;T&gt;.</td>
+                        <td>Matches if the target collection contains the same elements in the same order as the parameter collection.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">ContainsAll</span>&lt;T&gt;(ICollection&lt;T&gt; target)</th>
+                        <td>Any instance of ICollection&lt;T&gt;.</td>
+                        <td>Matches if the target collection contains the same elements as the parameter collection.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">Contains</span>&lt;T&gt;(T target)</th>
+                        <td>Any instance of ICollection&lt;T&gt;.</td>
+                        <td>Matches if the target collection contains the parameter object.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsLongerThan</span>&lt;T&gt;(int target)</th>
+                        <td>Any instance of ICollection&lt;T&gt;.</td>
+                        <td>Matches if the target collection is longer than the parameter length.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsShorterThan</span>&lt;T&gt;(int target)</th>
+                        <td>Any instance of ICollection&lt;T&gt;.</td>
+                        <td>Matches if the target collection is shorter than the parameter lenght.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsOfLength</span>&lt;T&gt;(int target)</th>
+                        <td>Any instance of ICollection&lt;T&gt;.</td>
+                        <td>Matches if the target collection has exactly the parameter length.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsBefore</span>(DateTime target)</th>
+                        <td>Any instance of DateTime.</td>
+                        <td>Matches if the target DateTime is set before the parameter DateTime.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="emphasis orange-3-text">IsAfter</span>(DateTime target)</th>
+                        <td>Any instance of DateTime.</td>
+                        <td>Matches if the target DateTime is set after the parameter DateTime.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<!-- Panel de contenido oscuro -->
+<div class="jumbotron jumbotron-fluid orange-3 my-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <h2 class="mars-3-text">You're all done!</h2>
+            <p class="card-text future-3-text">
+                You have learnt how to use the predefined patterns
+                to save time and effort.
+            </p>
+            <hr class="my-4">
+            <a class="btn blue-3 mars-3-text btn-lg" href="Reference.html" role="button">Go back</a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small orange-3">
+
+    <div class="footer-copyright text-center mars-3-text py-3">
+        Hello from Spain!
+    </div>
+
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.0/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/mdb.js"></script>
+
+</body>
+
+</html>
+

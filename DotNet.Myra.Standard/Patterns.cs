@@ -213,6 +213,16 @@ namespace DotNet.Myra.Standard
             => Pattern<ICollection<T>>.From(param => param.SequenceEqual(target));
 
         /// <summary>
+        /// Matches if the collection contains the same elements as the
+        /// parameter collection.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="target">Target collection</param>
+        /// <returns></returns>
+        public static Pattern<ICollection<T>> ContainsAll<T>(ICollection<T> target)
+            => IsSubsetOf(target).And(IsSupersetOf(target));
+
+        /// <summary>
         /// Matches if the collection contains the parameter object.
         /// </summary>
         /// <typeparam name="T"></typeparam>

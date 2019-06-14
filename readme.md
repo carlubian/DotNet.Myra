@@ -15,11 +15,17 @@ Start using DotNet.Myra in your projects to use a clean and expressive pattern m
 ### Robust mechanism
 Patterns allow a safe and expressive way to evaluate the state of any object. 
 
-### Imaginaction
+### Preset templates
 Choose from a set of pre-defined patterns and get straight into the action. 
 
-### Go your own way
-Customize the pattern with standarn boolean logic. The fluent API exposed allows for effortless tweaking of any logic expression. 
+### Make it your own
+Customize the pattern with standard boolean logic. The fluent API of Myra allows easy tweaking of any logic process.
+
+### Go with the flow
+Pattern matching is the latest fashion in functional programming. So many experts can't be wrong.
+
+### Terser code
+Myra patterns make shorter and more concise code, which is always a plus.
 
 ### Future proof
 Myra can be used from .NET Framework, .NET Core apps, UWP, Mono and Xamarin. It also supports the latest features in C#, such as tuples and local functions. 
@@ -85,6 +91,4 @@ Myra can be used from .NET Framework, .NET Core apps, UWP, Mono and Xamarin. It 
 
 ***
 
-## More information
-
-Visit our website at [http://myra.azurewebsites.net](http://myra.azurewebsites.net) to get more information and view guides on how to use DotNet.Myra
+See [the documentation site](https://carlubian.github.io/Myra) for more details on how to use Myra.

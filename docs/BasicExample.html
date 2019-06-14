@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Basic Example - Myra</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/selawik" type="text/css" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/muli" type="text/css" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/flushing.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="mars-3 grey-3-text">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark orange-4">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="index.html">Myra</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="mainNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Features.html">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Reference.html">References</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Download.html">Download</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- Encabezado -->
+<div class="jumbotron jumbotron-fluid orange-3">
+    <div class="row justify-content-center container-fluid">
+        <div class="col-sm-8">
+
+            <h2 class="future-3-text">Start here</h2>
+            <p class="lead future-3-text">Get started with an easy, short example 
+                that showcases the major features of Myra.</p>
+            <hr class="my-4">
+
+            <a class="btn blue-3 future-3-text btn-lg" href="Reference.html" role="button">Go back</a>
+
+        </div>
+    </div>
+</div>
+
+<!-- Panel de contenido claro -->
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <h2>The match is only starting</h2>
+            <p class="card-text subtitle">
+                This is how you use Myra.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                The entry point to the Myra pattern matching machanism is the
+                <span class="emphasis orange-3-text">Match()</span> extension
+                method, that can be invoked from any type of object.
+            </p>
+            <p>
+                This method takes two parameters:
+                <ul>
+                    <li>A <span class="emphasis orange-3-text">Pattern&lt;T&gt;</span>,
+                    that specifies the condition the matching object
+                    must verify.</li>
+                    <li>An <span class="emphasis orange-3-text">Action&lt;T&gt;</span>,
+                    that will be executed if the condition is satisfied.</li>
+                </ul>
+            </p>
+            <p>
+                To create a pattern, use the <span class="emphasis orange-3-text">Pattern.From()</span> method,
+                that takes a <span class="emphasis orange-3-text">
+                    Func&lt;T, bool&gt;
+                </span> as a parameter:
+            </p>
+            <pre class="prettyprint lang-cs">var isEven = Pattern&lt;int&gt;.From(n => n % 2 is 0);
+
+var isHusky = Pattern&lt;Dog&gt;.From(d => d is Husky);</pre>
+            <p>
+                A normal call to Match can look like this:
+            </p>
+            <pre class="prettyprint lang-cs">number.Match(isEven, n => Console.WriteLine($"{n} is even."));
+
+// You can also inline the pattern
+number.Match(Pattern&lt;int&gt;.From(n => n % 2 is 0), n => Console.WriteLine($"{n} is even."));
+            </pre>
+
+        </div>
+    </div>
+</div>
+
+<!-- Panel de contenido claro -->
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <h2>Rematch?</h2>
+            <p class="card-text subtitle">
+                You can match several patterns against the same object.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                To try a different pattern with an object, append another
+                call to Match after the first one:
+            </p>
+            <pre class="prettyprint lang-cs">fluffy.Match(Pattern&lt;Dog&gt;.From(d => d is Husky), d => Console.WriteLine($"{d.Name} is truly fluffly."))
+    .Match(Pattern&lt;Dog&gt;.From(d => d.Heads.Count > 1), d => Console.WriteLine($"{d.Name} is guarding the philosopher's stone."));
+            </pre>
+            <p>
+                All the patterns will be checked, and any matching patterns will
+                be executed. If you need a more advanced condition system, check
+                the Advanced Logic guide.
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<!-- Panel de contenido oscuro -->
+<div class="jumbotron jumbotron-fluid orange-3 my-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <h2 class="mars-3-text">You're all done!</h2>
+            <p class="card-text future-3-text">
+                Now you are ready to start using Myra, but there is
+                still more to learn.
+            </p>
+            <hr class="my-4">
+            <a class="btn blue-3 mars-3-text btn-lg" href="Reference.html" role="button">Go back</a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small orange-3">
+
+    <div class="footer-copyright text-center mars-3-text py-3">
+        Hello from Spain!
+    </div>
+
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.0/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/mdb.js"></script>
+
+</body>
+
+</html>
+
