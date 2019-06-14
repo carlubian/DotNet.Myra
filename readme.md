@@ -91,4 +91,4 @@ Myra can be used from .NET Framework, .NET Core apps, UWP, Mono and Xamarin. It 
 
 ***
 
-See [the documentation site](https://carlubian.github.io/Myra) for more details on how to use Myra.
+See [the documentation site](https://carlubian.github.io/DotNet.Myra) for more details on how to use Myra.
